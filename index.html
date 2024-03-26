@@ -1,104 +1,165 @@
-DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
+
 <head>
- <meta charset="UTF-8">
- <meta http-equiv="X-UA-Compatible" content="IE=edge">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Exemple HTML5 Sémantique</title>
- <style>
- body {
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-line-height: 1.6;
-margin: 20px;
-background-color: #f5f5f5;
-color: #333
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-}
-header, nav, section, article, aside, footer {
-border: 1px solid #ddd;
-margin-bottom: 20px;
-padding: 20px;
-background-color: #fff;
-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-border-radius: 8px;
-}
-header {
-background-color: #007bff;
-background-image: url("https://www.acs-ami.com/fr/blog/wp-content/uploads/2015/01/expatriation-japon.jpg");
-color: #fff;
-text-align: center;
-padding: 20px 0;
-}
+    <meta name="description" content="site web developpé dans une formation HTML CSS">
+    <meta name="keywords" content="HTML, CSS, Japon, evennement coopération">
+    <meta name="author" content="Hounaida Ksouri">
+    <link rel="icon" type="image/x-icon"
+        href="data:image/jpeg;base64,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">
+    <title> mon site officiel</title>
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Mon site Web">
+    <meta property="og:description" content="site web developpé dans une formation HTML CSS">
+    <meta property="og:image"
+        content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSthSWuKlgTuqGEJTS3dLekGioteSBRBxeOa3v3l6aRrki3zTd3jrWUq0EW3kAwM8vo_xo&usqp=CAU">
+    <meta property="og:url" content="URL canonique de la page">
+    <meta name="copyright" content="Copyright © 2024 Ambassade du Japon en tunisie">
+    <!--  <meta http-equiv="refresh" content="5;url=http://www.google.com"> -->
 
 
-nav ul {
-list-style: none;
-padding: 0;
-margin: 0;
-}
-nav li {
-display: inline-block;
-margin-right: 20px;
-}
-nav a {
-text-decoration: none;
-color: #007bff;
-font-weight: bold;
-}
-section h2, article h3, aside h2 {
-color: #007bff;
-}
-article p {
-color: #555;
-}
-aside {
-background-color: #f8f9fa;
-}
-footer {
-    text-align: center;
-padding: 10px 0;
-color: #777;
-}
 
- </style>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f5f5f5;
+            color: #333
+        }
+
+        header,
+        nav,
+        section,
+        article,
+        aside,
+        footer {
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        header {
+            background-color: #007bff;
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGqegL_q0AkqdKhsrWT3I6hNZm_skplzmPB5lKXMPp853S0n-B2aXro1eO9eQ2IbAZ-kc&usqp=CAU);
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        section h2,
+        article h3,
+        aside h2 {
+            color: #007bff;
+        }
+
+        article p {
+            color: #555;
+        }
+
+        aside {
+            background-color: #f8f9fa;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            color: #777;
+        }
+    </style>
 </head>
+
 <body>
- <header>
- <h1>Mon Site Web</h1>
- <p>Un site web sémantique et informatif.</p>
- </header>
- <nav>
- <ul>
- <li><a href="#accueil">Accueil</a></li>
- <li><a href="#articles">Articles</a></li>
- <li><a href="#contact">Contact</a></li>
- </ul>
- </nav>
- <section id="accueil">
-    
- <h2>Bienvenue sur Mon Site Web</h2>
- <p>Ce site offre des informations utiles et intéressantes sur divers sujets.</p>
- </section>
- <section id="articles">
- <article>
- <h3>Les bienfaits de l'exercice</h3>
- <p>Pratiquer régulièrement une activité physique a de nombreux avantages pour la 
-santé.</p>
- </article>
- <article>
- <h3>Recettes saines et délicieuses</h3>
- <p>Découvrez des recettes faciles à préparer qui sont à la fois délicieuses et 
-nutritives.</p>
-</article>
-</section>
-<aside>
-<h2>À la une</h2>
-<p>Les dernières actualités et événements importants.</p>
-</aside>
-<p> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_u8jXIFHdHD4B6p2xhjC97Se6TWkl_ARCEA&usqp=CAU"
-    alt="paysage du japon" width="200px height200px"></p>
-<footer>
-<p>&copy; 2023 Mon Site Web. Tous droits réservés.</p>
-</footer>
+    <header>
+        <h1>Toufoula </h1>
+        <p>Un site web dédié au bien etre de l'enfant</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#articles">Articles</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <section id="accueil">
+
+        <h2>Bienvenue dans l'univers de l'enfant</h2>
+        <p>Ce site offre des informations utiles et intéressantes sur le bien etre et le confort des enfants et leur
+            monde .</p>
+    </section>
+    <section id="articles">
+        <article>
+            <h3>Activités&Sorties</h3>
+            <p>Des idées de programmes et d’activités à faire avec les enfants (à Tunis ou ailleurs, à la ferme ou à la
+                maison)</p>
+            <img src="Images/activité sportive enfants.jpeg" alt="enfants" width="500px height300px">"
+        </article>
+        <p> D’après le dernier bilan de Santé Publique, la pratique régulière d’une activité physique diminue à
+            partir de l’âge de dix ans. Alors que le temps passé derrière un écran a augmenté de 17% au cours des
+            dernières années.</p>
+
+        <article>Quels sont les meilleurs sports pour les enfants?
+            <p> • La natation (de 3 a 5 ans)
+                • Les arts martiaux (dès 4 ans)
+                • Le tennis (de 4 a 6 ans)
+                • Le basket-ball (dès 7 ans)
+                • Le football (dès 7 ans)
+                • L'athlétisme (dès 8 ans)
+            </p>
+
+
+        </article>
+
+        <article>
+            <h3>Gatez votre enfant à travers son estomac</h3> <a href="https://www.fourchette-et-bikini.fr/cuisine/recettes-minceur/15-recettes-equilibrees-pour-les-enfants.html"> Recettes faciles et healthy</a> 
+            <p>Découvrez des recettes faciles à préparer qui sont à la fois délicieuses et
+                nutritives pour vos enfants .</p>
+            <img src="Images/idees-recettes-menu-enfant.jpg" alt="enfants" width="400px height300px">
+           
+
+        </article>
+        <section>
+            <h3>ambiances et festivités</h3>
+            <p> <img src="Images/Capture-decran-1.png" alt="enfants" width="400px height300px"></p>
+        </section>
+
+
+    </section>
+    <aside>
+        <h2>À la une</h2>
+        <p>Les dernières actualités et événements importants.</p>
+    </aside>
+    <p> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_u8jXIFHdHD4B6p2xhjC97Se6TWkl_ARCEA&usqp=CAU"
+            alt="paysage du japon" width="200px height200px"></p>
+    <footer>
+        <p>&copy; 2023 Mon Site Web. Tous droits réservés.</p>
+    </footer>
 </body>
+
 </html>
